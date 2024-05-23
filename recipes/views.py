@@ -9,8 +9,3 @@ def home(request):
 
 
 
-def sobre(request):
-    return HttpResponse('SOBRE')
-
-def contato(request):
-    return render(request, 'recipes/contato.html')
