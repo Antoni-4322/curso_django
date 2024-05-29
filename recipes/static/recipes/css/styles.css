@@ -242,6 +242,9 @@ h1, h2, h3, h4, h6{
 
 }
 
+.preparation-steps {
+    padding: var(--spacing-gutter-medium);
+}
 
 
 .main-footer{

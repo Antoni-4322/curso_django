@@ -15,9 +15,9 @@ def home(request):
 
 
 def category(request, category_id):
-    recipes = Recipe.objects.filter(
-        category__id=category_id, is_published=True
-    ).order_by('-id')
+    # recipes = Recipe.objects.filter(
+    #     category__id=category_id, is_published=True
+    # ).order_by('-id')
 
     # if not recipes:
     #     raise(Http404('Not Found '))
@@ -35,5 +35,7 @@ def category(request, category_id):
     })
 
 def recipes(request, id):
-    return render(request, 'recipes/pages/recipe-view.html', context={'name': 'Antonio Sousa'})
+     recipe = Recipe.objects.filter(pk=id, is_published=True).order_by('-id').first()
+
+     return render(request, 'recipes/pages/recipe-view.html', context={'recipe': recipe, 'is_detail_page': True})
 
